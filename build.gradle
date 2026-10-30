@@ -17,7 +17,6 @@ plugins {
     id("jacoco")
     id("idea")
     id("io.spring.dependency-management").version("1.0.7.RELEASE")
-    id("org.sonarqube").version("3.0")
     id("org.jetbrains.kotlin.jvm").version("1.4.20")
     id("org.jetbrains.kotlin.plugin.spring").version("1.4.20")
     id("org.springframework.boot").version("2.3.0.RELEASE")
@@ -49,19 +48,6 @@ compileTestKotlin {
     kotlinOptions {
         freeCompilerArgs = ["-Xjsr305=strict"]
         jvmTarget = JavaVersion.VERSION_15.toString()
-    }
-}
-
-sonarqube {
-    properties {
-        property "sonar.projectName", "Olaph Slack App"
-        property "sonar.projectKey", "olaph-io_slack-app"
-        property "sonar.host.url", "https://sonarcloud.io/"
-        property "sonar.organization", "olaph-io"
-        property "sonar.login", "f2cc9344b5efa26ca634ecf95805cdd120455967"
-        property "sonar.jacoco.report.missing.force.zero", "true"
-
-        //property "sonar.exclusions", "**/akamai/**"
     }
 }
 
